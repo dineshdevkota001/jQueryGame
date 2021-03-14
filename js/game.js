@@ -8,7 +8,7 @@ $(document).ready(() => {
         console.log(difficulty)
         $('#gameOver').fadeOut(300);
         $('#gamestart').trigger('play');
-        setTimeout(game(difficulty), 5000);
+        setTimeout(game(difficulty), 4000 + 200*parseInt($('#difficulty').val()));
         setTimeout(()=>{$('#gameElements').removeClass('blur')},1000);
         // $('.cell').off('click')
     })
