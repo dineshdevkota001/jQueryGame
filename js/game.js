@@ -1,11 +1,13 @@
 $(document).ready(() => {
     $('#gameover').trigger('load');
     $('#beep').trigger('load');
+    $('#gamestart').trigger('load');
     $('#gameOver').on('click', () => {
         let difficulty = 3000 - parseInt($('#difficulty').val()) * 200;
         // 2000 = 5 1000=10 3000=1
         console.log(difficulty)
         $('#gameOver').fadeOut(300);
+        $('#gamestart').trigger('play');
         setTimeout(game(difficulty), 5000);
         setTimeout(()=>{$('#gameElements').removeClass('blur')},1000);
         // $('.cell').off('click')
