@@ -9,8 +9,8 @@
   <meta name="author" content="Dinesh Devkota">
   <script src="js/jquery.js"></script>
   <link rel="stylesheet" href="css/main.css">
-  <audio id='beep' src='audio/beep'></audio>
-  <audio id=gameover src="audio/gameover"></audio>
+  <audio id='beep' preload="auto" src='audio/beep.wav'></audio>
+  <audio id=gameover preload="auto" src="audio/gameover.wav"></audio>
 </head>
 
 <body>
@@ -41,7 +41,9 @@
     <p id='continueText'>click to start</p>
 <div id='selectDifficulty'>
     <p class='inline fat'>Difficulty: </p>
-    <select class='inline fat' name="difficulty" id="difficulty">
+    <select class='inline fat' name="difficulty" id="difficulty" value='5'>
+
+    <option class='fat' value="0"> 0</option>
     <option class='fat' value="1"> 1</option>
     <option class='fat' value="2"> 2</option>
     <option class='fat' value="3"> 3</option>

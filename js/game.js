@@ -1,4 +1,6 @@
 $(document).ready(() => {
+    $('#gameover').trigger('load');
+    $('#beep').trigger('load');
     $('#gameOver').on('click', () => {
         let difficulty = 3000 - parseInt($('#difficulty').val()) * 200;
         // 2000 = 5 1000=10 3000=1
@@ -29,14 +31,16 @@ const randomFadein = (fadeSpeed, intervalClock) => {
                 score = score + 1;
                 $('#score').html(score);
                 gameOverflag= false;
-                $(pickedCell).removeClass('clickable')
+                $(pickedCell).removeClass('clickable');
                 $(pickedCell).addClass('clicked');
+                $('#beep').trigger('play');
             })
     setTimeout(() => {
         $(pickedCell).removeClass('clicked');
         $(pickedCell).off('click');
         if (gameOverflag){
             console.log('gameover');
+            $('#gameover').trigger('play');
             gameOver(intervalClock);
         }
     },fadeSpeed/(1 + score*0.01));
