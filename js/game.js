@@ -2,8 +2,8 @@ $(document).ready(() => {
     $('#gameover').trigger('load');
     $('#beep').trigger('load');
     $('#gamestart').trigger('load');
-    $('#gameOver').on('click', () => {
-        let difficulty = 3000 - parseInt($('#difficulty').val()) * 200;
+    $('#startbutton').on('click', () => {
+        let difficulty = 3000 - parseInt($('#difficulty').val()) * 190;
         // 2000 = 5 1000=10 3000=1
         console.log(difficulty)
         $('#gameOver').fadeOut(300);
@@ -12,7 +12,7 @@ $(document).ready(() => {
         setTimeout(()=>{$('#gameElements').removeClass('blur')},1000);
         // $('.cell').off('click')
     })
-})
+}) 
 
 const game = (difficulty) => {
     console.log('timestart')
@@ -52,8 +52,9 @@ const gameOver = (intervalClock)=>{
     clearInterval(intervalClock);
     $('#gameElements').addClass('blur')
     $('.clickable').removeClass('clickable');
-    $('#centerText').html('GameOver');
+    $('#centerText').html('Game Over');
     $('#continueText').html('Click to Restart. Your Score is '+$('#score').html())
     $('#score').html('0');
     $('#gameOver').fadeIn(2000);
+    
 }
